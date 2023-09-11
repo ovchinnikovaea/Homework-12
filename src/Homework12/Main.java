@@ -6,25 +6,27 @@ public class Main {
 
     public static void main(String[] args) {
         Author levTolstoy = new Author("Лев", "Толстой");
-        System.out.println(levTolstoy.getName());
-        System.out.println(levTolstoy.getLastName());
+        System.out.println(levTolstoy);
 
         Author mikhailSholokhov = new Author("Михаил", "Шолохов");
-        System.out.println(mikhailSholokhov.getName());
-        System.out.println(mikhailSholokhov.getLastName());
+        System.out.println(mikhailSholokhov);
+
+        System.out.println(levTolstoy.equals(mikhailSholokhov));
+        System.out.println(levTolstoy.hashCode());
+        System.out.println(mikhailSholokhov.hashCode());
 
         Book warAndPeace = new Book("Война и мир", levTolstoy, 1869);
-        System.out.println(warAndPeace.getBookTitle());
-        System.out.println(warAndPeace.getAuthor().getName() + " " + warAndPeace.getAuthor().getLastName());
-        System.out.println(warAndPeace.getPublicationYear());
+        System.out.println(warAndPeace);
 
         warAndPeace.setPublicationYear(1870);
         System.out.println(warAndPeace.getPublicationYear());
 
         Book quietDon = new Book("Тихий Дон", mikhailSholokhov, 1928);
-        System.out.println(quietDon.getBookTitle());
-        System.out.println(quietDon.getAuthor().getName() + " " + quietDon.getAuthor().getLastName());
-        System.out.println(quietDon.getPublicationYear());
+        System.out.println(quietDon);
+
+        System.out.println(warAndPeace.equals(quietDon));
+        System.out.println(warAndPeace.hashCode());
+        System.out.println(quietDon.hashCode());
 
     }
 }
